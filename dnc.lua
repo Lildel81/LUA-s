@@ -909,11 +909,19 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-        head=gear.Adhemar_D_head, --4/0
-        body="Ashera Harness", --7/7
-        neck="Loricate Torque +1", --6/6
-        ring1="Moonlight Ring", --5/5
-        ring2="Defending Ring", --10/10
+        ammo="Staunch Tathlum",
+    head="Malignance Chapeau",
+    body="Ashera Harness",
+    hands="Turms Mittens +1",
+    legs="Gleti's Breeches",
+    feet="Turms Leggings +1",
+    neck="Loricate Torque +1",
+    waist="Flume Belt",
+    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear="Genmei Earring",
+    left_ring="Moonlight Ring",
+    right_ring="Moonlight Ring",
+    back="Moonbeam Cape",
         }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

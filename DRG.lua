@@ -66,7 +66,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
-    Brigantia = {}
+  --[[Brigantia = {}
     Brigantia.TP = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
     Brigantia.WS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Brigantia.DAWS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
@@ -83,10 +83,10 @@ function init_gear_sets()
     
     Valorous.Body = {}
     Valorous.Body.STP = { name="Valorous Mail", augments={'Accuracy+30','"Store TP"+6','DEX+3','Attack+14',}}
-    Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}
+    Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}--]]
     -- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets +2"}
+	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets +3"}
     sets.CapacityMantle = {back="Mecistopins Mantle"}
     --sets.Berserker = {neck="Berserker's Torque"}
     sets.WSDayBonus     = { head="Gavialis Helm" }
@@ -98,26 +98,25 @@ function init_gear_sets()
 
 	sets.precast.JA.Jump = {
         ammo="Coiste Bodhar",
-		head="Flamma Zucchetto +2",
-        neck="Anu Torque",
-        ear1="Sherida Earring",
-        ear2="Telos Earring",
-        hands="Flamma Manopolas +2",
-        --hands="Vishap Finger Gauntlets +1",
-        body="Pteroslaver Mail +3",
-        ring1="Niqmaddu Ring",
-        ring2="Petrov Ring",
-		back=Brigantia.TP,
-        waist="Ioskeha Belt",
-        legs="Pteroslaver Brais +3",
-        feet="Ostro Greaves"
+    head="Flam. Zucchetto +2",
+    body="Vishap Mail +2",
+    hands="Vis. Fng. Gaunt. +2",
+    legs={ name="Valorous Hose", augments={'Attack+13','"Dbl.Atk."+4','DEX+2','Accuracy+10',}},
+    feet="Maenadic Gambieras",
+    neck="Anu Torque",
+    waist="Ioskeha Belt +1",
+    left_ear="Sroda Earring",
+    right_ear="Sherida Earring",
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais +3" }
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
         waist="Chaac Belt",
-        feet=Valorous.Feet.TH
+        
      }
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
@@ -128,14 +127,14 @@ function init_gear_sets()
         --legs="Peltast's Cuissots +1"
     })
 	sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA.Jump, {
-        --legs="Peltast's Cuissots +1",
-        --feet="Lancer's Schynbalds +2"
+        feet="Pelt. Schyn. +1",
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
 	sets.precast.JA['Spirit Link'] = {
-        hands="Lancer's Vambraces +2", 
-        head="Vishap Armet +1"
+        head="Vishap Armet +2",
+    hands="Pel. Vambraces +1",
+    left_ear="Pratik Earring",
     }
 	sets.precast.JA['Call Wyvern'] = {body="Pteroslaver Mail +3"}
 	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1" or Petroslaver Armet +1
@@ -146,18 +145,19 @@ function init_gear_sets()
 	
 	-- Healing Breath sets
 	sets.HB = {
-        ammo="Coiste Bodhar",
-		head="Pteroslaver Armet +3",
-        neck="Adad Amulet",
-        ear1="Sherida Earring",
-        ear2="Cessance Earring",
-		body=Valorous.Body.STP,
-        hands="Flamma Manopolas +2",
-        back="Updraft Mantle",
-        ring1="Dreki Ring",
-        waist="Glassblower's Belt",
-        legs="Vishap Brais +3",
-        feet="Pteroslaver Greaves"
+        ammo="Staunch Tathlum",
+    head={ name="Ptero. Armet +2", augments={'Enhances "Deep Breathing" effect',}},
+    body="Sulevia's Plate. +2",
+    hands="Vis. Fng. Gaunt. +2",
+    legs="Vishap Brais +3",
+    feet="Sulev. Leggings +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Flume Belt",
+    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear={ name="Pel. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','Crit.hit rate+5',}},
+    left_ring="Defending Ring",
+    right_ring="Moonlight Ring",
+    back={ name="Brigantia's Mantl/l e", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
     sets.MadrigalBonus = {
@@ -189,96 +189,130 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-        ammo="Knobkierrie",
-        head="Valorous Mask", 
-        neck="Dragoon's Collar +2",
-        ear1="Thrud Earring",
-        ear2="Moonshade Earring",
-		body=Valorous.Body.DA,
-        hands="Pteroslaver Finger Gauntlets +2",
-        ring1="Niqmaddu Ring",
-        ring2="Regal Ring",
-		back=Brigantia.WS,
-        waist="Sailfi Belt +1",
-        legs="Vishap Brais +3",
-        feet="Sulevia's Leggings +2"
+     
+    ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'Attack+23','Weapon skill damage +4%','STR+7',}},
+    body={ name="Valorous Mail", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Weapon skill damage +4%','Accuracy+14 Attack+14',}},
+    hands={ name="Ptero. Fin. G. +3", augments={'Enhances "Angon" effect',}},
+    legs="Vishap Brais +3",
+    feet="Sulev. Leggings +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Thrud Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Epaminondas's Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Valorous Mask",
     })
 
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
-		--head="Flamma Zucchetto +2",
-	    head="Stinger Helm +1",
-        ear1="Sherida Earring",
-        neck="Shadow Gorget",
-        waist="Soil Belt",
-		back=Brigantia.DAWS,
-        hands="Sulevia's Gauntlets +2",
-        legs="Sulevia's Cuisses +2",
-        feet="Flamma Gambieras +2"
+		ammo="Coiste Bodhar",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body={ name="Valorous Mail", augments={'Attack+16','"Dbl.Atk."+5','STR+2',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sroda Earring",
+    right_ear="Sherida Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
-		--head="Flamma Zucchetto +2",
-		head="Pteroslaver Armet +3",
-        ear1="Sherida Earring",
-        neck="Dragoon's Collar +2",
-        waist="Soil Belt",
-        hands="Sulevia's Gauntlets +2",
-        feet="Flamma Gambieras +2"
+		ammo="Coiste Bodhar",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body={ name="Valorous Mail", augments={'Attack+16','"Dbl.Atk."+5','STR+2',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sroda Earring",
+    right_ear="Sherida Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {
-		head="Pteroslaver Armet +3",
-        neck="Dragoon's Collar +2",
-        body="Pteroslaver Mail +3",
-        waist="Soil Belt",
-        legs="Vishap Brais +3",
+		ammo="Coiste Bodhar",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body="Vishap Mail +2",
+    hands="Vis. Fng. Gaunt. +2",
+    legs="Vishap Brais +3",
+    feet="Flam. Gambieras +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sroda Earring",
+    right_ear="Sherida Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
-	    head="Stinger Helm +1",
-        neck="Breeze Gorget",
-        ear1="Thrud Earring",
-        ear2="Ishvara Earring",
-        body=Valorous.Body.DA,
-        hands="Pteroslaver Finger Gauntlets +2",
-		back=Brigantia.WS,
-        waist="Breeze Belt",
-        legs="Vishap Brais +3",
-        feet="Sulevia's Leggings +2"
+	    ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'Attack+23','Weapon skill damage +4%','STR+7',}},
+    body={ name="Valorous Mail", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Weapon skill damage +4%','Accuracy+14 Attack+14',}},
+    hands={ name="Ptero. Fin. G. +3", augments={'Enhances "Angon" effect',}},
+    legs="Vishap Brais +3",
+    feet="Sulev. Leggings +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Thrud Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Epaminondas's Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
         head="Valorous Mask", 
-		back=Brigantia.WS,
+		
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-	    head="Stinger Helm +1",
-		body="Hjarrandi Breastplate",
-        waist="Sailfi Belt +1",
-        hands="Flamma Manopolas +2",
-        legs="Peltast's Cuissots +1",
-        feet=Valorous.Feet.WS
+	    ammo="Aurgelmir Orb +1",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs="Gleti's Breeches",
+    feet="Gleti's Boots",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Gerdr Belt",
+    left_ear="Telos Earring",
+    right_ear="Sherida Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Regal Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
         head="Valorous Mask",
-		back=Brigantia.WS,
+		
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {})
     
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-        neck="Shadow Gorget",
-        ear1="Thrud Earring",
-        hands="Flamma Manopolas +2",
-        waist="Sailfi Belt +1",
-        legs="Vishap Brais +3",
-        feet=Valorous.Feet.WS
+        ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'Attack+23','Weapon skill damage +4%','STR+7',}},
+    body={ name="Valorous Mail", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Weapon skill damage +4%','Accuracy+14 Attack+14',}},
+    hands={ name="Ptero. Fin. G. +3", augments={'Enhances "Angon" effect',}},
+    legs="Vishap Brais +3",
+    feet="Sulev. Leggings +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Epaminondas's Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
     })
 	sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
-		back=Brigantia.WS,
-        feet="Sulevia's Leggings +2",
-        hands=Valorous.Hands.WS,
+		
     })
 	sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
     })
@@ -292,26 +326,26 @@ function init_gear_sets()
         ear2="Cessance Earring",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
-		back=Brigantia.TP,
+		--back=Brigantia.TP,
         legs="Carmine Cuisses +1",
         feet="Flamma Gambieras +2"
     }
 
 	-- Idle sets
 	sets.idle = {
-        ammo="Coiste Bodhar",
-        head="Hjarrandi Helm",
-        neck="Dragoon's Collar +2",
-        ear1="Sherida Earring",
-        ear2="Telos Earring",
-   	    body="Tartarus Platemail",
-        hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Dreki Ring",
-		back=Brigantia.TP,
-        --waist="Asklepian Belt",
-        legs="Carmine Cuisses +1",
-        feet="Sulevia's Leggings +2"
+        ammo="Staunch Tathlum",
+    head={ name="Loess Barbuta +1", augments={'Path: A',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands="Gleti's Gauntlets",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet="Gleti's Boots",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Flume Belt",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Defending Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -326,18 +360,18 @@ function init_gear_sets()
 	
 	sets.idle.Field = set_combine(sets.idle, {
         ammo="Staunch Tathlum",
-        head="Hjarrandi Helm",
-        neck="Sanctity Necklace",
-   	    body="Tartarus Platemail",
-        ear1="Etiolation Earring",
-        ear2="Genmei Earring",
-        hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Dreki Ring",
-        waist="Flume Belt",
-		back=Brigantia.TP,
-        legs="Carmine Cuisses +1",
-        feet="Sulevia's Leggings +2"
+    head={ name="Loess Barbuta +1", augments={'Path: A',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands="Gleti's Gauntlets",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet="Gleti's Boots",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Flume Belt",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Defending Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
     sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
 
@@ -353,19 +387,19 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-        -- ammo="Hasty Pinion +1",
         ammo="Crepuscular Pebble",
-        head="Hjarrandi Helm",
-        neck="Twilight Torque",
-        ear1="Cessance Earring",
-        ear2="Telos Earring",
-   	    body="Nyame Mail",
-        hands="Nyame Gauntlets",
-        ring1="Patricius Ring",
-        ring2="Dark Ring",
-        waist="Sailfi Belt +1",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"
+    head={ name="Loess Barbuta +1", augments={'Path: A',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands="Gleti's Gauntlets",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet="Flam. Gambieras +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Flume Belt",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Moonlight Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
@@ -385,72 +419,96 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
         ammo="Coiste Bodhar",
-		head="Flamma Zucchetto +2",
-        neck="Anu Torque",
-        ear1="Sherida Earring",
-        ear2="Dedition Earring",
-		body="Hjarrandi Breastplate",
-        hands="Flamma Manopolas +2",
-        ring1="Niqmaddu Ring",
-        ring2="Petrov Ring",
-		back=Brigantia.TP,
-        waist="Sailfi Belt +1",
-        legs="Pteroslaver Brais +3",
-        feet="Flamma Gambieras +2"
+    head="Flam. Zucchetto +2",
+    body="Pelt. Plackart +1",
+    hands="Sulev. Gauntlets +2",
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-  --      head="Hjarrandi Helm",
-		head="Flamma Zucchetto +2",
-        ear2="Brutal Earring",
-        neck="Shulmanu Collar",
-        hands="Sulevia's Gauntlets +2",
-		body="Hjarrandi Breastplate",
-        ring2="Flamma Ring",
-        legs="Pteroslaver Brais +3",
-        waist="Ioskeha Belt",
-		back=Brigantia.TP,
+        ammo="Coiste Bodhar",
+        head="Flam. Zucchetto +2",
+        body="Pelt. Plackart +1",
+        hands="Sulev. Gauntlets +2",
+        legs="Sulev. Cuisses +2",
+        feet="Flam. Gambieras +2",
+        neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+        waist="Ioskeha Belt +1",
+        left_ear="Sherida Earring",
+        right_ear="Telos Earring",
+        left_ring="Niqmaddu Ring",
+        right_ring="Petrov Ring",
+        back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        ammo="Ginsen",
-        ear1="Cessance Earring",
-        neck="Shulmanu Collar",
-        hands="Flamma Manopolas +2",
-        ring2="Regal Ring",
-		body="Hjarrandi Breastplate",
-        legs="Sulevia's Cuisses +2"
+        ammo="Coiste Bodhar",
+        head="Flam. Zucchetto +2",
+        body="Pelt. Plackart +1",
+        hands="Sulev. Gauntlets +2",
+        legs="Sulev. Cuisses +2",
+        feet="Flam. Gambieras +2",
+        neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+        waist="Ioskeha Belt +1",
+        left_ear="Sherida Earring",
+        right_ear="Telos Earring",
+        left_ring="Niqmaddu Ring",
+        right_ring="Petrov Ring",
+        back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        ammo="Crepuscular Pebble",
-        head="Hjarrandi Helm",
-        neck="Dragoon's Collar +2",
-		body="Hjarrandi Breastplate",
-        ring1="Niqmaddu Ring",
-        ring2="Dreki Ring",
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        waist="Sailfi Belt +1",
-        feet="Nyame Sollerets"
+        ammo="Coiste Bodhar",
+    head="Sulevia's Mask +2",
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands="Sulev. Gauntlets +2",
+    legs="Sulev. Cuisses +2",
+    feet="Gleti's Boots",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Hjarrandi Helm",
-   	    body="Nyame Mail",
-        ring2="Patricius Ring",
-		back=Brigantia.TP,
-        hands="Nyame Gauntlets",
-   	    body="Nyame Mail",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"
+        ammo="Coiste Bodhar",
+    head="Sulevia's Mask +2",
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands="Sulev. Gauntlets +2",
+    legs="Sulev. Cuisses +2",
+    feet="Gleti's Boots",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        ring2="Patricius Ring",
-		back=Brigantia.TP,
-        hands="Nyame Gauntlets",
-   	    body="Nyame Mail",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"
+        ammo="Coiste Bodhar",
+    head="Sulevia's Mask +2",
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands="Sulev. Gauntlets +2",
+    legs="Sulev. Cuisses +2",
+    feet="Gleti's Boots",
+    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Petrov Ring",
+    back={ name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 
     sets.engaged.War = set_combine(sets.engaged, {

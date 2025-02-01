@@ -17,6 +17,37 @@ equip_lock = S{
 --     end
 -- end
 
+
+--Lildel Binds
+send_command('alias getlildnc input //po unpack export_Lildel_DNC')
+send_command('alias putlildnc i/nput //po pack export_Lildel_DNC')
+
+send_command('alias getlilnin input //po unpack export_Lildel_NIN')
+send_command('alias putlilnin input //po pack export_Lildel_NIN')
+
+send_command('alias getlilthf input //po unpack export_Lildel_THF')
+send_command('alias putlilthf input //po pack export_Lildel_THF')
+
+send_command('alias getlildrg input //po unpack export_Lildel_DRG')
+send_command('alias putlildrg input //po pack export_Lildel_DRG')
+
+send_command('alias putlilblu input //po pack export_Lildel_BLU')
+send_command('alias getlilblu input //po unpack export_Lildel_BLU')
+
+send_command('alias putlilrdm input //po pack export_Lildel_RDM')
+send_command('alias getlilrdm input //po unpack export_Lildel_RDM')
+
+send_command('alias getlilrdm input //po unpack export_Lildel_COR')
+send_command('alias putlilrdm input //po pack export_Lildel_cor')
+
+
+--Pico Binds
+send_command('alias getpicowhm input //po unpack export_Picodelgallo_WHM')
+send_command('alias putpicowhm input //po pack export_Picodelgallo_WHM')
+
+send_command('alias start input //exec start.lua')
+
+
 function user_post_precast(spell, action, spellMap, eventArgs)
     -- reive mark
 	if spell.type:lower() == 'weaponskill' then
